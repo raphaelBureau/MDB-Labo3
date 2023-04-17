@@ -1,0 +1,17 @@
+﻿@model MDB.Models.User
+
+@{
+    ViewBag.Title = "VerifyDone";
+}
+
+<h2>Verification Reussie</h2>
+
+<p>Bonjour @Helper.GenderFinder(Model.GenderId) @Model.LastName</p>
+
+<p>Botre adresse courriel est maintenant validee</p>
+
+<p>Cliquez sur le lien ci dessous pour vous connecter</p>
+
+<p>Webmestre</p>
+@Html.ActionLink("Connexion", "Login")
+

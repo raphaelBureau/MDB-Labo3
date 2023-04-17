@@ -1,0 +1,32 @@
+﻿@model MDB.Models.User
+
+@{
+    ViewBag.Title = "Profil";
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    $(document).ready(function () {
+            let passwordInput = $("#Password");
+            let passwordConfimInput = $("#ConfirmPassword");
+
+            let changePasswordCheckBox = $("#changePassword");
+
+            passwordInput.val("@Session["guid"]");
+            passwordConfimInput.val("@Session["guid"]");
+
+            changePasswordCheckBox.change(function () {
+
+                if ($(this).is(":checked")) {
+                    passwordInput.val("");
+                    passwordConfimInput.val("");
+                } else {
+                    passwordInput.val("@Session["guid"]");
+                    passwordConfimInput.val("@Session["guid"]");
+                }
+            });
+        });
+
+    </script>
+}
+@{ Html.RenderPartial("ProfilForm"); }
